@@ -14,12 +14,6 @@ public class FirstNonRepetedChar {
 		}		
 	}
 	
-	public static void main(String[] args) {
-		String str = "stress";
-		method1(str);
-		method2(str);
-	}
-
 	private static void method2(String str) {
 		Map<Character, Integer> map=new HashMap<>();
 		for(int i=0;i<str.length();i++) {
@@ -37,6 +31,11 @@ public class FirstNonRepetedChar {
 			}
 		}
 	}
-
+	
+	public static void main(String[] args) {
+		String str = "stress";
+		method1(str);
+		method2(str);
+	}
 	
 }
