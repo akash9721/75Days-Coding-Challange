@@ -36,5 +36,21 @@ public class SingleLinkedlist {
       head.next.next.next.next=new ListNode(5);
       System.out.println("List traversal is");
       printList(head);
+      
+      System.out.println();
+      System.out.println("insert at firt place");
+      ListNode node=insertAtFirst(head,100);
+      printList(node);
+	}
+
+	private static ListNode insertAtFirst(ListNode head, int data) {
+		ListNode node=head;
+		ListNode node1=new ListNode(data);
+		if(node==null) {
+			return node1;
+		}
+		node1.next=node;
+		node=node1;
+		return node;
 	}
 }
