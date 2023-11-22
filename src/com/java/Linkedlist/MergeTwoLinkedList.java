@@ -39,6 +39,7 @@ public class MergeTwoLinkedList {
 				head2 = head2.next;
 			}
 		}
+		
 		while (head1 != null) {
 			ans.next = head1;
 			ans = ans.next;
@@ -61,17 +62,17 @@ public class MergeTwoLinkedList {
 	}
 	
 	public static void main(String[] args) {
-		List head1 = new List(10);
-		head1.next = new List(20);
-		head1.next.next = new List(5);
-		head1.next.next.next = new List(2);
+		List head1 = new List(2);
+		head1.next = new List(5);
+		head1.next.next = new List(10);
+		head1.next.next.next = new List(20);
 		System.out.println("List 1 data");
 		printList(head1);
 		
-		List head2 = new List(21);
+		List head2 = new List(11);
 		head2.next = new List(18);
-		head2.next.next = new List(25);
-		head2.next.next.next = new List(11);
+		head2.next.next = new List(21);
+		head2.next.next.next = new List(25);
 		System.out.println("\nList 2 data");
 		printList(head2);
 		
