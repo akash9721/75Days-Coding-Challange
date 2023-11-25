@@ -34,7 +34,7 @@ public class Employee2App {
 		long noOfMaleEmp = employee2List.stream().filter(x->x.getGender().equals("Male")).count();
 		System.out.println("No of Male employee "+noOfMaleEmp);
 		System.out.println("No of Female employee "+noOfFemaleEmp);
-		System.out.println("                 &&                 ");
+		System.out.println("    &&   ");
 		employee2List.stream().collect(Collectors.groupingBy(Employee2::getGender,Collectors.counting()))
 		.forEach((k,v)->System.out.println(k+" -> "+v));
 		
