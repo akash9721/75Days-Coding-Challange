@@ -41,6 +41,9 @@ public class Employee2App {
 		//2.Write a program to print the names of all departments in the organization.
 		System.out.println("\nnames of all departments in the organization");
 		employee2List.stream().map(Employee2::getDepartment).distinct().forEach(System.out::println);
+		System.out.println("\n");
+		employee2List.stream().collect(Collectors.groupingBy(Employee2::getDepartment,Collectors.counting()))
+		.forEach((k,v)->System.out.println(k+" ->"+v));
 		
 		//3. Find the average age of Male and Female Employees.
 		System.out.println("\nThe average age of Male and Female Employees");
@@ -96,9 +99,7 @@ public class Employee2App {
         emp.entrySet().forEach(it->{
         	System.out.println("Employee In "+it.getKey());
         	it.getValue().forEach(s->System.out.println(s.getName()));
-        });
-		
-		
+        });		
 		
 	}
 
