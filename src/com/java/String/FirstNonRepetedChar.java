@@ -29,6 +29,7 @@ public class FirstNonRepetedChar {
 				break;
 			}
 		}
+		
 	}
 
 	// abcdcaf
@@ -46,6 +47,7 @@ public class FirstNonRepetedChar {
 				break;
 			}
 		}
+		
 	}
 
 	public static void main(String[] args) {
