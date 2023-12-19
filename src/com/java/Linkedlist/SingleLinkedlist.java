@@ -84,18 +84,53 @@ public class SingleLinkedlist {
 		System.out.println(" List traversal is");
 		printList(head);
 
-		System.out.println("\ninsert at first place");
+		/*System.out.println("\ninsert at first place");
 		ListNode node = insertAtFirst(head, 100);
 		printList(node);
 
 		System.out.println("\ninsert at last place");
 		ListNode node1 = insertAtLast(node, 500);
-		printList(node1);
+		printList(node1);*/
 
 		System.out.println("\ninsert at given position");
 		ListNode node2 = insertAtPosition(head, 999, 3);
 		printList(node2);
+		
+		System.out.println("\nfind nth element from the last");
+		System.out.println("is: "+findNthFromLast(head,2));
+		
 
+	}
+
+	private static int findNthFromLast(ListNode head,int n) {
+//		int cnt=0;
+//		ListNode curr=head;
+//		while(curr!=null) {
+//			curr=curr.next;
+//			cnt++;
+//		}
+//		
+//		curr=head;
+//		for(int i=0;i<cnt-n;i++) {
+//			curr=curr.next;
+//		}
+//		return curr.data;
+		
+		ListNode curr=head;
+		ListNode slow=head;
+		ListNode fast=head;
+		for(int i=0;i<n;i++) {
+			if(fast==null)
+				return -1;
+			fast=fast.next;
+		}
+		
+		while(fast!=null) {
+			slow=slow.next;
+			fast=fast.next;
+		}
+		return slow.data;
+		
 	}
 
 }

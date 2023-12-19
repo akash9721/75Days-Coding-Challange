@@ -1,3 +1,4 @@
+
 package com.java.Linkedlist;
 
 import java.util.HashSet;
@@ -56,7 +57,7 @@ public class LinkedListCycle {
 		head.next = new Node(2);
 		head.next.next = new Node(0);
 		head.next.next.next = new Node(-4);
-		//head.next.next.next.next = head.next;
+		head.next.next.next.next = head.next;
 		
 		if(detectCycle(head)) {
 			System.out.println("Cycle found");
