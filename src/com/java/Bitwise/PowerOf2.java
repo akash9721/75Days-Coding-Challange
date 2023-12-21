@@ -21,7 +21,7 @@ public class PowerOf2 {
 	public static boolean checkPower2(int n) {
 		if(n==0)
 			return false;
-		if((n&n-1)==0) {
+		if((n&n-1)==0) {     // 2, 4, 8, 16, 32, 64,.....
 			return true;
 		}
 		else {
