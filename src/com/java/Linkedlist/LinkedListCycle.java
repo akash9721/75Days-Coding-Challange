@@ -72,6 +72,28 @@ public class LinkedListCycle {
 		else {
 			System.out.println("cycle not found");
 		}
+		
+		System.out.println("cycle length is: "+cycleLength(head));
+		
+	}
+
+	private static int cycleLength(Node head) {
+		Node slow=head;
+		Node fast=head;
+		while(fast!=null && fast.next!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+			if(slow==fast) {
+				int cnt=0;
+				Node temp=slow;
+				do {
+					temp=temp.next;
+					cnt++;
+				}while(temp!=slow);
+				return cnt;
+			}
+		}
+		return 0;
 	}
 
 }
