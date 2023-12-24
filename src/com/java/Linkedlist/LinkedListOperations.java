@@ -40,6 +40,17 @@ public class LinkedListOperations {
 		}
 		return head;
 	}
+	
+	public static int middleNode(SingleListNode head) {
+		SingleListNode slow=head;
+		SingleListNode fast=head;
+		while(fast!=null && fast.next!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+		return slow.data;
+	}
+	
 	public static void main(String[] args) {
 		SingleListNode head=new SingleListNode(1);
 		head.next=new SingleListNode(1);
@@ -53,6 +64,9 @@ public class LinkedListOperations {
 		System.out.println("\nafter removing duplicate data");
 		SingleListNode node=removeDuplicate(head);
 		printData(node);
+		
+		System.out.println();
+		System.out.println("middle element of the list is "+middleNode(node));
 		
 		
 	}
