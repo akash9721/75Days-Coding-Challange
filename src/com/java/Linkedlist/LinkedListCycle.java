@@ -52,6 +52,41 @@ public class LinkedListCycle {
 		return false;
 	}
 	
+	private static int cycleLength(Node head) {
+		Node slow=head;
+		Node fast=head;
+		while(fast!=null && fast.next!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+			if(slow==fast) {
+				int cnt=0;
+				Node temp=slow;
+				do {
+					temp=temp.next;
+					cnt++;
+				}while(temp!=slow);
+				return cnt;
+			}
+		}
+		return 0;
+	}
+	public static int firstElement(Node head) {
+		Node slow=head;
+		Node fast=head;
+		while(fast!=null && fast.next!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+			if(slow==fast) {
+				slow=head;
+				while(slow!=fast) {
+					slow=slow.next;
+					fast=fast.next;
+				}
+				return slow.data;
+			}
+		}
+		return 0;
+	}
 	public static void main(String[] args) {
 		Node head = new Node(3);
 		head.next = new Node(2);
@@ -74,26 +109,8 @@ public class LinkedListCycle {
 		}
 		
 		System.out.println("cycle length is: "+cycleLength(head));
-		
-	}
-
-	private static int cycleLength(Node head) {
-		Node slow=head;
-		Node fast=head;
-		while(fast!=null && fast.next!=null) {
-			slow=slow.next;
-			fast=fast.next.next;
-			if(slow==fast) {
-				int cnt=0;
-				Node temp=slow;
-				do {
-					temp=temp.next;
-					cnt++;
-				}while(temp!=slow);
-				return cnt;
-			}
-		}
-		return 0;
+		System.out.println();
+		System.out.println("first element from the cycle "+firstElement(head));
 	}
 
 }
