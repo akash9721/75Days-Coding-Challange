@@ -87,6 +87,7 @@ public class LinkedListCycle {
 		}
 		return 0;
 	}
+	
 	public static void main(String[] args) {
 		Node head = new Node(3);
 		head.next = new Node(2);
@@ -108,9 +109,10 @@ public class LinkedListCycle {
 			System.out.println("cycle not found");
 		}
 		
-		System.out.println("cycle length is: "+cycleLength(head));
-		System.out.println();
+		System.out.println("\ncycle length is: "+cycleLength(head));
+		
 		System.out.println("first element from the cycle "+firstElement(head));
+		
 	}
 
 }
