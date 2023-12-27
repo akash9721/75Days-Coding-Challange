@@ -70,7 +70,6 @@ public class BinaryTree {
 			}
 		}
 		return ans;
-
 	}
 
 	public static void main(String[] args) {
@@ -94,5 +93,4 @@ public class BinaryTree {
 			System.out.print(x + " ");
 		}
 	}
-
 }
