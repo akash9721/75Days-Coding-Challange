@@ -99,7 +99,13 @@ public class Employee2App {
         emp.entrySet().forEach(it->{
         	System.out.println("Employee In "+it.getKey());
         	it.getValue().forEach(s->System.out.println(s.getName()));
-        });		
+        });
+        
+        //11. Find the list of students whose age is in between 25 and 30
+        System.out.println("Find the list of students whose age is in between 25 and 30");
+        List<Employee2> listOfStudent = employee2List.stream().filter(x->x.getAge()>25 && x.getAge()<30).collect(Collectors.toList());
+        listOfStudent.forEach(x->System.out.println(x));
+        
 		
 	}
 
